@@ -27,9 +27,6 @@
 # 0  0  0  1  1  0  0  0
 # get total number of zeros
 
-pp min_flips_mono_incr "00110"
-pp min_flips_mono_incr "010110"
-pp min_flips_mono_incr "00011000"
 
 def min_flips_mono_incr(s)
   zero_ct = 0
@@ -49,6 +46,9 @@ def min_flips_mono_incr(s)
 
 end
 
+pp min_flips_mono_incr "00110"
+pp min_flips_mono_incr "010110"
+pp min_flips_mono_incr "00011000"
 
 
 
