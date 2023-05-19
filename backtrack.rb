@@ -22,7 +22,7 @@ def total_n_queens(n)
               place_remove_queen [row,c], hash, n, false
           end
       }
-  }
+    }
   traverse.call(0, 0, count)
   count
 end
