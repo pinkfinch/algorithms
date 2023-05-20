@@ -24,5 +24,5 @@ class Person
 end
 
 p = Person.new(name: "blue", password: "plue")
-p.name = "pent"
+#p.name = "pent"
 p p.encrypted_password
