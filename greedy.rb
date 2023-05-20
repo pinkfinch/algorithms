@@ -22,7 +22,7 @@
 # Output: -1
 # Explanation: There is only 1 task of difficulty level 2, but in each round, you can only complete either 2 or 3 tasks of
 #  the same difficulty level. Hence, you cannot complete all the tasks, and the answer is -1.
-
+require_relative "heap"
 def minimum_rounds(tasks)
   hash = {}
   tasks.each { |task|
@@ -75,3 +75,29 @@ pp minimum_rounds [2,2,3,3,2,4,4,4,4,4]
 
 # Input: nums = [2,10,8]
 # Output: 3
+
+def minimum_deviation(nums)
+  min_val = nums[0]
+  heap = MaxHeap.new
+  nums.each { |num|
+    num = num * 2 if num.odd?
+    min_val = [num, min_val].min
+    heap.insert(num)
+  }
+  pp heap
+
+  current = heap.pop
+  while(current.even?)
+    current = current/2
+    heap.push(current)
+    current = heap.pop
+  end
+
+  heap.pop - min_val
+
+end
+
+# pp minimum_deviation [1,2,3,4]
+# pp minimum_deviation [4,1,5,20,3]
+pp minimum_deviation [2,10,8]
+pp minimum_deviation [5,1,2,8]
